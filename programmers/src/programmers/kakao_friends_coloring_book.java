@@ -1,7 +1,7 @@
 package programmers;
 import java.util.*;
 
-class Solution {
+class Solution_kakao_friends_coloring_book{
 	int[][] next = {{-1, 0},/*상*/{1, 0},/*하*/{0, -1},/*좌*/	{0, 1}/*우*/};
 	boolean [][] check;
 	
@@ -81,18 +81,17 @@ public class kakao_friends_coloring_book {
 	}
 	public static void main(String[] args) {
 		init_testCase();
-		Solution s = new Solution();
+		Solution_kakao_friends_coloring_book s = new Solution_kakao_friends_coloring_book();
 		int [][] test;
 		int [] test_answer;
 		for(int i = 0; i< testCase.size(); i++) {
 			test = testCase.get(i);
-			System.out.println("테스트 " + i + " : 시작");
 			test_answer = s.solution(test.length, test[0].length, test);
 			if(test_answer[0] == answer.get(i)[0] && test_answer[1] == answer.get(i)[1]) {
-				System.out.println("테스트 " + i+ " : " + "성공");
+				System.out.println("테스트 " + (i+1)+ " : " + "성공");
 			}
 			else {
-				System.out.println("테스트" + i+ " : " + "실패");
+				System.out.println("테스트" + (i+1)+ " : " + "실패");
 			}
 		}
 	}
