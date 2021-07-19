@@ -4,7 +4,7 @@ import java.io.*;
 //1차 풀이
 //스택과 큐를 이용한 간단 bfs dfs 코딩 해보자
 public class baekjoon1260 {
-	public static void dfs(int target, Vector<Queue<Integer>> map, boolean[] isVisit) {
+	public static void bfs(int target, Vector<Queue<Integer>> map, boolean[] isVisit) {
 		Queue<Integer> queue = new LinkedList<Integer>();
 		queue.add(target);
 		while(!queue.isEmpty()) {
@@ -17,13 +17,13 @@ public class baekjoon1260 {
 			}
 		}
 	}
-	public static void bfs(int target, Vector<Queue<Integer>> map, boolean[] isVisit) {
+	public static void dfs(int target, Vector<Queue<Integer>> map, boolean[] isVisit) {
 		isVisit[target-1] = true;
 		Queue<Integer> queue = map.elementAt(target-1);
 		for(int node : queue) {
 			if(isVisit[node-1]) continue;
 			System.out.print(node + " ");
-			bfs(node, map, isVisit);
+			dfs(node, map, isVisit);
 		}
 	}
 	public static void main(String[] args) throws IOException {
@@ -54,9 +54,9 @@ public class baekjoon1260 {
 		boolean [] isVisit_dfs = new boolean[node_count]; Arrays.fill(isVisit_dfs, false);
 		boolean [] isVisit_bfs = new boolean[node_count]; Arrays.fill(isVisit_bfs, false);
 		System.out.print(start_node + " "); 
-		bfs(start_node, map, isVisit_bfs);
-		System.out.println(); 
 		dfs(start_node, map, isVisit_dfs);
+		System.out.println(); 
+		bfs(start_node, map, isVisit_bfs);
 	}
 
 }
