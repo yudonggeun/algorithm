@@ -2,11 +2,11 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-class point{
+class Point_2178{
 	int row;
 	int col;
 	int depth;
-	point(int row, int col, int depth){
+	Point_2178(int row, int col, int depth){
 		this.row = row;
 		this.col = col;
 		this.depth = depth;
@@ -16,13 +16,13 @@ public class baekjoon2178{
 	static int N, M;
 	static int [] moveRow = {-1, 1, 0, 0};
 	static int [] moveCol = {0, 0, -1, 1};
-	static Queue<point> queue;
+	static Queue<Point_2178> queue;
 	static HashSet<String> hash;
 	static int bfs(boolean[][] miro) {
 		int answer = 0;
-		queue.add(new point(1, 1, 1));
+		queue.add(new Point_2178(1, 1, 1));
 		while(!queue.isEmpty()) {
-			point p = queue.poll();
+			Point_2178 p = queue.poll();
 			if(p.row == N && p.col == M) {
 				answer = p.depth;
 			}
@@ -30,12 +30,12 @@ public class baekjoon2178{
 				int next_row = p.row+moveRow[i];
 				int next_col = p.col+moveCol[i];
 				int next_depth = p.depth+1;
-				String point_s = next_row + "," + next_col;
+				String Point_2178_s = next_row + "," + next_col;
 				if(!(0 < p.row && p.row <= N && 0 < p.col && p.col <= M)) continue;
 				if(!miro[p.row-1][p.col-1]) continue;
-				if(hash.contains(point_s)) continue;
-				hash.add(point_s);
-				queue.add(new point(next_row, next_col, next_depth));
+				if(hash.contains(Point_2178_s)) continue;
+				hash.add(Point_2178_s);
+				queue.add(new Point_2178(next_row, next_col, next_depth));
 			}
 		}
 		return answer;
@@ -56,7 +56,7 @@ public class baekjoon2178{
 			}
 		}
 		//
-		queue = new LinkedList<point>();
+		queue = new LinkedList<Point_2178>();
 		hash = new HashSet<String>();
 		bw.write(bfs(miro)+"");
 		bw.flush();

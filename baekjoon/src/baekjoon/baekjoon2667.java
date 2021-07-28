@@ -3,10 +3,10 @@ package baekjoon;
 import java.util.*;
 import java.io.*;
 
-class Dot{
+class Dot_2667{
 	int row;
 	int col;
-	Dot(int row, int col){
+	Dot_2667(int row, int col){
 		this.row = row;
 		this.col = col;
 	}
@@ -16,17 +16,17 @@ public class baekjoon2667 {
 	static int moveCol[] = {1, -1, 0, 0};
 	static Vector<Integer> houseCount;
 	static void bfs(boolean [][] area, int start_r, int start_c) {
-		Queue<Dot> queue = new LinkedList<Dot>();
+		Queue<Dot_2667> queue = new LinkedList<Dot_2667>();
 		int count = 0;
-		queue.add(new Dot(start_r, start_c));
+		queue.add(new Dot_2667(start_r, start_c));
 		while(!queue.isEmpty()) {
-			Dot p = queue.poll();
+			Dot_2667 p = queue.poll();
 			if(!(0 <= p.row && p.row < area.length && 0 <= p.col && p.col < area[0].length)) continue;
 			if(!area[p.row][p.col]) continue;
 			count++;
 			area[p.row][p.col]= false;
 			for(int i = 0; i< 4; i++) {
-				queue.add(new Dot(p.row + moveRow[i], p.col + moveCol[i]));
+				queue.add(new Dot_2667(p.row + moveRow[i], p.col + moveCol[i]));
 			}
 		}
 		houseCount.add(count);
