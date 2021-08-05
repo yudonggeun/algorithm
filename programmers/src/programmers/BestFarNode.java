@@ -4,7 +4,6 @@ import java.util.*;
 class Solution_BestFarNode {
     int n;
     ArrayList<LinkedList<Integer>> map;
-    
     int[] oneToN(){
         int [] array = new int[n];
         Queue<int[]> queue = new LinkedList<int[]>();
