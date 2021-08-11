@@ -18,7 +18,6 @@ public class baekjoon2512 {
 			end = Math.max(end, budget[i]);
 		}
 		
-		
 		while(start <= end) {
 			int mid = (start+end)/2;
 			int sum = 0;
@@ -34,7 +33,6 @@ public class baekjoon2512 {
 		}
 		bw.write(end+"");
 		bw.flush();
-		
 		
 	}
 }
