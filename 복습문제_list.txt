@@ -10,3 +10,5 @@ https://www.acmicpc.net/status?user_id=youdong98&problem_id=1744&from_mine=1
 https://www.acmicpc.net/problem/2206
 가장 먼 노드
 https://programmers.co.kr/learn/courses/30/lessons/49189
+강의실 배정
+https://www.acmicpc.net/problem/11000
