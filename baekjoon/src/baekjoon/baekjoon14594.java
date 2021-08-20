@@ -43,10 +43,7 @@ public class baekjoon14594 {
 				}
 			}
 		}
-		for(int a : set) {
-			System.out.print(a);
-		}
-		System.out.println();
+		
 		bw.write(N-count+"");
 		bw.flush();
 		bw.close();
