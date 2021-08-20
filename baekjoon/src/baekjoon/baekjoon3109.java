@@ -20,8 +20,8 @@ public class baekjoon3109 {
 			int nCol = pCol+1;
 			
 			if(isValid(nRow, nCol) && map[nRow][nCol] != x) {
+				map[nRow][nCol] = x;
 				if(findRoad(map, nRow, nCol) == 1) {
-					map[nRow][nCol] = x;
 					return 1;
 				}
 			}
