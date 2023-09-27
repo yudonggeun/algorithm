@@ -1,7 +1,7 @@
 package org.example.programmers;
 
 //https://school.programmers.co.kr/learn/courses/30/lessons/161989
-class Solution {
+class Adding{
     public int solution(int n, int m, int[] section) {
 
         int target = 0;

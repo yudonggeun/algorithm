@@ -1,7 +1,7 @@
 package org.example.programmers;//https://school.programmers.co.kr/learn/courses/30/lessons/159993
 import java.util.*;
 
-class Solution {
+class MazeExit{
 
     Node start, end, lever;
     String[] maps;

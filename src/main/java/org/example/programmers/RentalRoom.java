@@ -1,7 +1,7 @@
 package org.example.programmers;//https://school.programmers.co.kr/learn/courses/30/lessons/155651
 import java.util.StringTokenizer;
 
-class Solution {
+class RentalRoom{
     public int solution(String[][] book_time) {
 
         int[] sum = new int[24 * 60 + 10];
