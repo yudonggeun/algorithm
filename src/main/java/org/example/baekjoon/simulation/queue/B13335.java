@@ -1,4 +1,4 @@
-package org.example.baekjoon;
+package org.example.baekjoon.simulation.queue;
 
 import java.io.*;
 import java.util.LinkedList;
