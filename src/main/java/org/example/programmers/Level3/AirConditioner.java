@@ -32,7 +32,6 @@ class AirConditioner {
             }
         }
         
-        
         int result = Integer.MAX_VALUE;
         int lastIndex = onboard.length -1;
         
