@@ -35,7 +35,7 @@ public class Bj11780 {
         for (int mid = 0; mid < nodeCount; mid++) {
             for (int from = 0; from < nodeCount; from++) {
                 for (int to = 0; to < nodeCount; to++) {
-                    if (map[from][mid] == Integer.MAX_VALUE || map[mid][to] == Integer.MAX_VALUE) {
+                    if (map[from][mid] == Integer.MAX_VALUE || map[mid][to] == Integer.MAX_VALUE || from == to) {
                         continue;
                     }
 
