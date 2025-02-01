@@ -1,9 +1,9 @@
-package org.example.baekjoon.level.platinum.five;
+package org.example.baekjoon.level.platinum.five.Bj3197;
 
 import java.io.*;
 import java.util.*;
 
-public class Bj3197 {
+public class UnionFindSolution {
 
     public static int[] parent;
 
