@@ -7,43 +7,38 @@ public class Bj2473 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int n = Integer.parseInt(br.readLine());
         long[] input = Arrays.stream(br.readLine().split(" ")).mapToLong(Long::parseLong).toArray();
         Arrays.sort(input);
 
         long abs = Long.MAX_VALUE;
-        long[] candidates = null;
+        long[] candidates = new long[3];
 
-        for (int s = 0; s < input.length - 2; s++) {
-            for (int e = s + 2; e < input.length; e++) {
-                int start = s + 1;
-                int end = e - 1;
-                long target = -(input[s] + input[e]);
+        for (int i = 0; i < n - 2; i++) {
+            long e1 = input[i];
 
-                while (start <= end) {
-                    int mid = (start + end) / 2;
+            int start = i + 1;
+            int end = n - 1;
 
-                    if (input[mid] == target) {
-                        System.out.println(String.format("%d %d %d", input[s], input[mid], input[e]));
-                        return;
-                    } else if (input[mid] < target) {
-                        start = mid + 1;
-                    } else {
-                        end = mid - 1;
-                    }
+            while (start < end) {
+                long e2 = input[start];
+                long e3 = input[end];
+
+                long sum = e1 + e2 + e3;
+                long absCase = Math.abs(sum);
+                if (abs > absCase) {
+                    abs = absCase;
+                    candidates[0] = e1;
+                    candidates[1] = e2;
+                    candidates[2] = e3;
                 }
 
-                long value = Math.abs(input[s] + input[e] + input[start]);
-                if (value < abs && start != e) {
-                    abs = value;
-                    candidates = new long[]{input[s], input[start], input[e]};
-                }
-                value = Math.abs(input[s] + input[e] + input[end]);
-                if (value < abs && end != s) {
-                    abs = value;
-                    candidates = new long[]{input[s], input[end], input[e]};
+                if (sum > 0) end--;
+                else if (sum < 0) start++;
+                else {
+                    System.out.println(String.format("%d %d %d", candidates[0], candidates[1], candidates[2]));
+                    return;
                 }
             }
         }
